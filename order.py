@@ -27,7 +27,7 @@ class Order:
 
     @customer.setter
     def customer(self, value):
-        if not isinstance(value, 'Customer'):
+        if type(value).__name__ != 'Customer':  
             raise TypeError("Customer must be an instance of Customer class")
         self._customer = value
 
@@ -37,7 +37,7 @@ class Order:
 
     @coffee.setter
     def coffee(self, value):
-        if not isinstance(value, 'Coffee'):
+        if type(value).__name__ != 'Coffee':
             raise TypeError("Coffee must be an instance of Coffee class")
         self._coffee = value
 
